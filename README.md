@@ -69,6 +69,7 @@ Here we report the most significant plots obtained in our work.
 
 ![Ooooo](avis-bayesian\images\01_fit500_post_dens_beta_significative.jpeg)
 
+![](https://avis-bayesian/images/14_fit_CI_intercept.png)
 
 
 
