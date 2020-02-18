@@ -25,15 +25,15 @@
 
 
 2. In our code we use the following datasets:
-- avis.RData            -> Used for the scripts names *01_descriptive_analysis.R* and *02_fit500_posterior_analysis.R*
+- avis.RData            -> Used for the scripts *01_descriptive_analysis.R* and *02_fit500_posterior_analysis.R*
 - avis_clean_plus.RData -> Used for the script *03_time_dep_qualitative_analysis.R*
  
 
-3. We fitted four models and we saved it with the following names:
+3. We fitted four models and we saved them with the following names:
 - fit-500.RData   -> fit with only the first 500 donors
-- fit_all.RData   -> fit with all the donors and all variables
+- fit_all.RData   -> fit with all donors and all variables
 - fit.RData       -> fit with all donors and only significant variables
-- fit-fixed.RData -> fit of dott. Spinelli with only significant variables
+- fit-fixed.RData -> Dott. Spinelli's fit with only significant variables
 
 
 4. We created our model in STAN with a time-dependent log-likelihood:
@@ -49,17 +49,17 @@
 - fit-fixed.RData
   
 Some plots for the posterior analysis are present in the file just to see if our results were ok. 
-A more detailed posterior analysis is performed in another script.
+A more detailed posterior analysis is performed in this last script:
 
 
-7. In the file *05_post_processing.R* you can find all the posterior analysis of the fit obtained in the previous script.
+7. In the file *05_post_processing.R* you can find all the posterior analysis of the fit previously obtained.
 
 
 # BRIEF OVERVIEW OF THE PROJECT:
 Our project consists in modeling recurrent events through time-dependent covariates.
 In particular, our starting point is Dott.Spinelli's thesis, in which he works on the AVIS databases, in order to
 analyse the process of blood donation in the collection centre of Lambrate. 
-In his thesis he considers only with time-fixed covariates. Our goal is to extend the dataset including also 4 new
+In his thesis he considers only with time-fixed covariates. Our goal is to extend the model and the dataset including also 4 new
 time-dependent covariates: heart rate, min and max pressure and hemoglobin.
 After having obtained the fit of our model, we compare our results with the results obtained by Dott.Spinelli.
 Here we report the most significant plots obtained in our work.
@@ -68,7 +68,8 @@ Here we report the most significant plots obtained in our work.
 
  ## Fit 500 donors
  
- Here we report the posterior densities, credible intervals, ACF plots and traceplots of our fit with only the first 500 donors and 100000 iterations, warmup 50000 and thin equal to 25. 
+ Here we report the posterior densities, credible intervals, ACF plots and traceplots of our fit with only the first 500 donors and 100000 iterations, warmup 50000 and thin equal to 25. In particular, all traceplots are good. Here we report just two traceplots for beta and one for lambda as an example.
+
 
 ### Beta
 
@@ -86,6 +87,9 @@ Here we report the most significant plots obtained in our work.
 ![](images/08_fit500_traceplot_lambda.jpeg)### Frailties
 
 ### Frailties
+
+We can notice the existence of a linear association between log(recurrences) and log(frailty posterior mean).
+Random effects are spread in a wide range. This suggests the presence of eterogeneity between individuals that is not captured by observable feature.
 
 ![](images/09_fit500_recurrences_vs_w.jpeg)
 
