@@ -55,14 +55,21 @@ A more detailed posterior analysis is performed in another script.
 7. In the file 05_post_processing.R you can find all the posterior analysis of the fit obtained in the previous script.
 
 
-# BRIEF OVERVIEW OF OUR PROJECT:
+# BRIEF OVERVIEW OF THE PROJECT:
 Our project consists in modeling recurrent events through time-dependent covariates.
-In particular our starting point is the Thesis of Dott.Spinelli that worked on the AVIS batabases in order to
+In particular, our starting point is Dott.Spinelli's thesis, in which he works on the AVIS databases, in order to
 analyse the process of blood donation in the collection centre of Lambrate. 
-In his thesis he worked only with time-fixed covariates, our goal is to extend the dataset including also 4 new
-time-dependent covariates: heart rate, min and max pressure and hemoglobine.
-After fitting our model we compare our results with dott.Spinelli's one.
-We'll report here the most significant plots obtained in our scripts.
+In his thesis he considers only with time-fixed covariates. Our goal is to extend the dataset including also 4 new
+time-dependent covariates: heart rate, min and max pressure and hemoglobin.
+After having obtained the fit of our model, we compare our results with the results obtained by Dott.Spinelli.
+Here we report the most significant plots obtained in our work.
 
 # Some significant plots:
+
+
+![Ooooo](avis-bayesian\images\01_fit500_post_dens_beta_significative.jpeg)
+
+
+
+
 
