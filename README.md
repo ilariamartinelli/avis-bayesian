@@ -64,13 +64,81 @@ time-dependent covariates: heart rate, min and max pressure and hemoglobin.
 After having obtained the fit of our model, we compare our results with the results obtained by Dott.Spinelli.
 Here we report the most significant plots obtained in our work.
 
-# Some significant plots:
+# THE MOST SIGNIFICANT PLOTS:
+
+ ## Fit 500 donors
+ 
+ Here we report the posterior densities, credible intervals, ACF plots and traceplots of our fit with only the first 500 donors and 100000 iterations, warmup 50000 and thin equal to 25. 
+
+### Beta
+
+![](images/01_fit500_post_dens_beta_significative.jpeg)
+![](images/02_fit500_credible_intervals.jpeg)
+![](images/03_fit500_traceplots_sesso_etaprima.jpeg)
+![](images/04_fit500_acf_beta.jpeg)
 
 
-![Ooooo](avis-bayesian\images\01_fit500_post_dens_beta_significative.jpeg)
+### Lambda
 
-![](https://avis-bayesian/images/14_fit_CI_intercept.png)
+![](images/05_fit500_post_dens_lambda.jpeg)
+![](images/06_fit500_credible_intervals_lambda.jpeg)
+![](images/07_fot500_acf_lambda.jpeg)
+![](images/08_fit500_traceplot_lambda.jpeg)### Frailties
 
+### Frailties
+
+![](images/09_fit500_recurrences_vs_w.jpeg)
+
+## Qualitative behaviour of time dependent variables
+By analyzing the second image, we can notice that the two variables on the left change more during time with respect to the other two; so we take this decision: hemoglobin and minimum pressure are kept time-dependent, while pulse and maximum pressure become time-fixed.
+ 
+![](images/10_plot_time_dep.jpeg)
+![](images/11_plot_time_dep_few.jpeg)
+
+
+## Fit complete
+
+Here we report some results obtained in our fit with all donors, 20000 iterations, warmup 12000 and thin equal to 4.
+
+![](images/12_fit_all_post_densities.jpeg)
+![](images/13_fit_all_CI.jpeg)
+
+## Effect of the intercept
+
+By reducing the model considering only relevant variables, sex becomes negative: against our intuition; it was positive before. Moreover RH becomes very negative around -12, while before it was around -0.1.
+
+![](images/14_fit_CI_intercept.png)
+
+This suggests us to add an intercept:
+
+![](images/15_fit_CI_no_intercept.png)
+
+
+## Fit reduced
+
+The significant covariates that we consider in the reduced model are the following:
+- "sex"
+- "smoke"
+- "age first donation"
+- "RH"
+- "Hemoglobin"
+- "Pulse"
+- "Minimum Pressure"
+
+### Beta
+
+![](images/16_fit_post_densities.jpeg)
+![](images/17_fit_CI.jpeg)
+![](images/18_fit_traceplots.jpeg)
+![](images/19_fit_ACF.jpeg)
+
+### Lambda
+
+![](images/20_fit_lambda_post_densities.jpeg)
+![](images/21_fit_lambda_CI.jpeg)
+![](images/22_fit_lambda_traceplots.png)
+![](images/23_fit_lambda_ACF.jpeg)
+![](images/24_fit_lambda_donations.jpeg)
 
 
 
